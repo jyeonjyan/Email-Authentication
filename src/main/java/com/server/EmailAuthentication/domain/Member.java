@@ -33,6 +33,10 @@ public class Member {
     @NotBlank
     private String address;
 
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    private UserRole role = UserRole.ROLE_NOT_PERMITTED;
+
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private Date createAt;
