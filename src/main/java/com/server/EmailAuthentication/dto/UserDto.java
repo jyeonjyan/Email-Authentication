@@ -1,5 +1,6 @@
 package com.server.EmailAuthentication.dto;
 
+
 import com.sun.istack.NotNull;
 import lombok.*;
 
