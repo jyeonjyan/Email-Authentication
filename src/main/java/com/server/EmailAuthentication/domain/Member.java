@@ -2,7 +2,6 @@ package com.server.EmailAuthentication.domain;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.web.servlet.handler.UserRoleAuthorizationInterceptor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
