@@ -29,8 +29,4 @@ public class User extends BaseTime {
 
     @Column(unique = true)
     private String userName;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "salt_id")
-    private Salt salt;
 }
