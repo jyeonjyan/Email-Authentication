@@ -3,15 +3,18 @@ package com.server.EmailAuthentication.service;
 import com.server.EmailAuthentication.domain.User;
 import com.server.EmailAuthentication.dto.UserDto;
 import com.server.EmailAuthentication.repository.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
@@ -23,7 +26,7 @@ public class UserService {
 
         User user = User.builder()
                 .userEmail(userDto.getUserEmail())
-                .password(userDto.getPassword())
+                .password(passwordEncoder.encode(userDto.getPassword()))
                 .userName(userDto.getUserName())
                 .build();
 
