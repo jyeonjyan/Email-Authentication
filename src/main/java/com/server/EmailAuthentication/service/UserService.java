@@ -19,8 +19,8 @@ public class UserService {
 
     @Transactional
     public User signup(UserDto userDto){
-        // 만약 입력한 userName이 이미 있다면.. Exception
-        if(userRepository.findByUserName(userDto.getUserName()).orElse(null) != null){
+        // 만약 입력한 userEmail이 이미 있다면.. Exception
+        if(userRepository.findByUserEmail(userDto.getUserEmail()).orElse(null) != null){
             throw new RuntimeException("이미 가입된 유저입니다.");
         }
 
