@@ -12,13 +12,13 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder){
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
-    public String save(UserDto userDto){
+    public User signup(UserDto userDto){
         // 만약 입력한 userName이 이미 있다면.. Exception
         if(userRepository.findByUserName(userDto.getUserName()).orElse(null) != null){
             throw new RuntimeException("이미 가입된 유저입니다.");
@@ -30,6 +30,6 @@ public class UserService {
                 .userName(userDto.getUserName())
                 .build();
 
-        return userRepository.save(user).getUserName();
+        return userRepository.save(user);
     }
 }
