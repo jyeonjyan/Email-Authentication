@@ -17,11 +17,4 @@ public class EmailAuthenticationApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EmailAuthenticationApplication.class, args);
 	}
-//	@Autowired
-//	private EmailService emailService;
-//
-//	@Test
-//	public void testEmail() {
-//		emailService.sendMail("heea3788@gmail.com", "Test subject", "Test mail");
-//	}
 }

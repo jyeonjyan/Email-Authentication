@@ -2,8 +2,6 @@ package com.server.EmailAuthentication.service;
 
 import com.server.EmailAuthentication.service.util.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,14 +13,7 @@ import java.util.Random;
 public class EmailService {
     @Autowired
     private JavaMailSenderImpl mailSender;
-//    private JavaMailSender javaMailSender;
     private int size;
-
-//    //DI
-//    public EmailService(JavaMailSender javaMailSender){
-//        this.javaMailSender = javaMailSender;
-//    }
-
     //인증 키 생성
     private String getKey(int size){
         this.size = size;
@@ -69,15 +60,5 @@ public class EmailService {
         }
 
         return authKey;
-
-//        var mailMessage = new SimpleMailMessage();
-//
-//        mailMessage.setTo(toEmail);
-//        mailMessage.setSubject(subject);
-//        mailMessage.setText(message);
-//
-//        mailMessage.setFrom("s20062@gsm.hs.kr");
-//
-//        javaMailSender.send(mailMessage);
     }
 }
