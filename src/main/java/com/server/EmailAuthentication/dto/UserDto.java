@@ -16,14 +16,14 @@ import javax.validation.constraints.Size;
 public class UserDto {
     @Email
     @NotNull
-    private String userEmail = "s20062@gsm.hs.kr";
+    private String userEmail;
 
     @NotNull
-    private String password = "1234";
+    private String password;
 
     @NotNull
     @Size(min = 3, max = 30)
-    private String userName = "전지";
+    private String userName;
 
     private String authKey;
 }

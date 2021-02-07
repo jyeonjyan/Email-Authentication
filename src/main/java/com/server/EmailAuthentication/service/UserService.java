@@ -37,4 +37,13 @@ public class UserService {
 
     public void updateAuthKey(Map<String, String> map) {
     }
+
+    @Transactional
+    public void updateAuthStatus(String email) {
+
+        User user = userRepository.findByUserEmail(email).orElseThrow();
+        user.setAuthStatus(true);
+
+    }
+
 }

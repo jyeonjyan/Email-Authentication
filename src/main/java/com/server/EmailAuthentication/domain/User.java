@@ -1,16 +1,16 @@
 package com.server.EmailAuthentication.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import java.util.Map;
 
 @Entity
 @Builder
 @Getter
+@Setter
 @Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,4 +29,7 @@ public class User extends BaseTime {
 
     @Column(unique = true)
     private String userName;
+
+    @Column
+    private boolean authStatus = false;
 }
