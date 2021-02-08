@@ -29,8 +29,6 @@ public class UserController {
         //email, authKey 가 일치할경우 authStatus 업데이트
         userService.updateAuthStatus(email);
         System.out.println("email = " + email);
-
         //리다이렉트
-
-        }
     }
+}
