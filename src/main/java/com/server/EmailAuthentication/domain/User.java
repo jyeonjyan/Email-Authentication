@@ -2,10 +2,8 @@ package com.server.EmailAuthentication.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
-import java.util.Map;
 
 @Entity
 @Builder
@@ -30,6 +28,7 @@ public class User extends BaseTime {
     @Column(unique = true)
     private String userName;
 
+    // authStatus의 기본 값을 false로 부여.
     @Column
     private boolean authStatus = false;
 }

@@ -13,6 +13,7 @@ import java.util.Random;
 public class EmailService {
     @Autowired
     private JavaMailSenderImpl mailSender;
+    // 난수의 크기 지정 변수.
     private int size;
     //인증 키 생성
     private String getKey(int size){

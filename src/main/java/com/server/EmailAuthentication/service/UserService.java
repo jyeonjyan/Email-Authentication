@@ -7,8 +7,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Map;
-
 @Service
 public class UserService {
     private final UserRepository userRepository;
@@ -33,9 +31,6 @@ public class UserService {
                 .build();
 
         return userRepository.save(user);
-    }
-
-    public void updateAuthKey(Map<String, String> map) {
     }
 
     @Transactional
