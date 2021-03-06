@@ -12,13 +12,3 @@
 > Validation  
 > Spring Data JPA  
 > Java Mail Sender
-
-## ✅ API Testing 방법
-### signUp
-```
-localhost:8080/user/signup
-```
-### DB Check
-```
-localhost:8080/h2-console
-```
